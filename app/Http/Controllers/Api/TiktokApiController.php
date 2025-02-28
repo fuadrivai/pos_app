@@ -181,7 +181,7 @@ class TiktokApiController extends Controller
         $fixData = null;
         $fixData["create_time_online"] = date('Y-m-d H:i:s', (int)$headerObject['create_time'] / 1000);
         $fixData["update_time_online"] = date('Y-m-d H:i:s', (int)$headerObject['update_time']);
-        $fixData["message_to_seller"] = $headerObject['buyer_message'];
+        $fixData["message_to_seller"] = $headerObject['buyer_message']??"";
         $fixData["order_no"] = $headerObject['order_id'];
         $fixData["order_status"] = $this->getOrderStatus($headerObject['order_status'])['status'];
         $fixData["tracking_number"] = $headerObject['tracking_number'] ?? "";
